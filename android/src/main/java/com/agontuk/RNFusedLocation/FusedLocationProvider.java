@@ -27,7 +27,7 @@ import com.google.android.gms.location.SettingsClient;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 
-import java.util.Random;
+import java.security.SecureRandom;
 
 public class FusedLocationProvider implements LocationProvider {
   private final ReactApplicationContext context;
@@ -250,7 +250,7 @@ public class FusedLocationProvider implements LocationProvider {
   }
 
   private int getActivityRequestCode() {
-    Random random = new Random();
+    SecureRandom random = new SecureRandom();
     return random.nextInt(10000);
   }
 
